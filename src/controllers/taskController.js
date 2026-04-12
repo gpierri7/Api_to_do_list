@@ -10,7 +10,7 @@ const getRequestBody = (req) => {
         });
 
         req.on('end', () => {
-            resolve(JSON.parse(body));
+            resolve(body ? JSON.parse(body) : {});
         });
     });
 };
@@ -18,6 +18,11 @@ const getRequestBody = (req) => {
 // POST
 const createTask = async (req, res) => {
     const body = await getRequestBody(req);
+
+    if (!body.title) {
+        res.statusCode = 400;
+        return res.end(JSON.stringify({ message: "Título obrigatório" }));
+    }
 
     const task = taskService.addTask(body.title);
 
