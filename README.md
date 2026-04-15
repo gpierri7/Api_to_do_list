@@ -1,76 +1,47 @@
 # API To-Do List
 
 ## Descrição
-Essa API foi desenvolvida utilizando Node.js puro, sem uso de frameworks como Express, com o objetivo de entender melhor como funciona o protocolo HTTP na prática.
+Essa API foi feita em Node.js sem usar frameworks como Express, para praticar como funciona o HTTP na prática.
 
-A aplicação permite gerenciar tarefas (to-do list), realizando operações básicas como criação, listagem, atualização e remoção, além da busca por ID.
+Ela permite criar, listar, atualizar e deletar tarefas, além de buscar por ID.
 
 ## Tecnologias utilizadas
 - Node.js
 - Módulo HTTP nativo
-- JavaScript (CommonJS)
+- JavaScript
 
-## Como executar o projeto
+## Como executar
 
-
-
-1. Acesse a pasta do projeto:
+1. Entrar na pasta do projeto:
 cd Api_to_do_list
 
-2. Execute o servidor:
+2. Rodar o servidor:
 node app.js
 
-3. 
+3. Acessar:
 http://localhost:3000
 
 ## Endpoints
 
-### Criar tarefa
-POST /tasks
+POST /tasks  
+GET /tasks  
+GET /tasks/:id  
+PUT /tasks/:id  
+DELETE /tasks/:id  
 
-Exemplo de body:
-{
-  "title": "Estudar Node.js"
-}
+## Estrutura
 
----
+O projeto foi separado em partes:
 
-### Listar tarefas
-GET /tasks
-
----
-
-### Buscar tarefa por ID
-GET /tasks/:id
-
----
-
-### Atualizar tarefa
-PUT /tasks/:id
-
-Exemplo de body:
-{
-  "completed": true
-}
-
----
-
-### Deletar tarefa
-DELETE /tasks/:id
-
-## Estrutura do projeto
-
-O projeto foi organizado em camadas para separar responsabilidades:
-
-- **Routes**: responsável por receber as requisições HTTP e direcionar para o controller correto  
-- **Controller**: faz o controle da requisição e resposta  
-- **Service**: contém a lógica da aplicação  
-- **Model**: define a estrutura dos dados (tarefas)
+- Routes: recebe as requisições  
+- Controller: controla a resposta  
+- Service: faz a lógica  
+- Model: estrutura das tarefas  
 
 ## Observações
 
-- Os dados são armazenados em memória (array), ou seja, ao reiniciar o servidor, as tarefas são perdidas  
-- O projeto foi desenvolvido sem frameworks para melhor compreensão do funcionamento interno de uma API  
+- Os dados são armazenados em memória (array)
+- Ao reiniciar o servidor, os dados são perdidos
 
 ## Autor
 Gabriel Pierri
