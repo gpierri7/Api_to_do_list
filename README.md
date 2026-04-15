@@ -12,16 +12,15 @@ A aplicação permite gerenciar tarefas (to-do list), realizando operações bá
 
 ## Como executar o projeto
 
-1. Clone o repositório:
-git clone https://github.com/seu-usuario/api-tarefas
 
-2. Acesse a pasta do projeto:
-cd api-tarefas
 
-3. Execute o servidor:
+1. Acesse a pasta do projeto:
+cd Api_to_do_list
+
+2. Execute o servidor:
 node app.js
 
-4. A API estará disponível em:
+3. 
 http://localhost:3000
 
 ## Endpoints
